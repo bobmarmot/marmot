@@ -29,17 +29,7 @@ function changePage(page) {
   queryPost(queryObj, page)
 }
 
-// 收集form 的数据 
-function serializeObj(form) {
-  var arr = form.serializeArray();
-  var obj = {};
 
-  arr.forEach((item) => {
-    obj[item.name] = item.value;
-  })
-
-  return obj;
-}
 
 queryPost({}, 1);
 

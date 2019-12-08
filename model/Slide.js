@@ -24,7 +24,7 @@ const SlideSchema = new Schema({
 		type: String,
 		default: null
 	}
-}, {versionKey: false});
+}, { versionKey: false });
 
 // 用户集合类
 const Slide = mongoose.model('Slide', SlideSchema);

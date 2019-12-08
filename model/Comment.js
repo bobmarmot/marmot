@@ -35,9 +35,17 @@ const CommentSchema = new Schema({
 		type: Date,
 		default: Date.now
 	}
-}, {versionKey: false});
+}, { versionKey: false });
 // 创建分类集合
 const Comment = mongoose.model('Comment', CommentSchema);
+
+Comment.create({
+	content: '我是不是很帅队',
+	author: '5dec99ac1717c11aec582b7d', // 从数据库中查看用户id 
+	post: '5deb113b7e35f93f0452226f'// 从数据库中查看文章id 
+}).then(x => {
+	console.log('评论插入成功')
+})
 
 // 文章分类格式校验（路由级别）
 const validateComment = comment => {

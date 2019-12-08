@@ -30,7 +30,6 @@
         <a class="btn btn-danger btn-sm" href="javascript:;" style="display: none">批量删除</a>
         <form class="form-inline" id="queryForm">
           <select name="category" class="form-control input-sm" id="category">
-            
           </select>
           <select name="state" class="form-control input-sm">
             <option value="">所有状态</option>
@@ -101,7 +100,7 @@
         <td class="text-center">{{$value.createAt}}</td>
         <td class="text-center">{{['草稿', '已发布'][$value.state]}}</td>
         <td class="text-center">
-          <a href="javascript:;" class="btn btn-default btn-xs">编辑</a>
+          <a href="/admin/post-add.html?id={{$value._id}}" class="btn btn-default btn-xs">编辑</a>
           <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
         </td>
       </tr>
@@ -128,6 +127,8 @@
     <option value="{{$value._id}}">{{$value.title}}</option>
     {{/each}}
   </script>
+  <script src="../assets/js/common.js"></script>
+
   <script src="../assets/js/posts.js"></script>
 </body>
 </html>

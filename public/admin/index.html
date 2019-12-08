@@ -52,9 +52,8 @@
   </div>
 
   <div class="aside">
-    <div class="profile">
-      <img class="avatar" src="../uploads/avatar.jpg">
-      <h3 class="name">Coder</h3>
+    <div class="profile" id="userinfo">
+
     </div>
     <ul class="nav">
       <li class="active">
@@ -87,28 +86,14 @@
       </li>
     </ul>
   </div>
-
+  <script type="text/html" id="tpl-userinfo">
+    <img class="avatar" src="{{avatar?avatar:'../uploads/avatar.jpg'}}">
+    <h3 class="name">{{nickName}}</h3>
+  </script>
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
+  <script src="../assets/vendors/art-template/template-web.js"></script>
   <script>NProgress.done()</script>
-  <script>
-  $('#logout').on('click', function(e){
-      // 做一个二认确认 
-      var isConfirm = confirm('你确认要退出 吗？');
-
-      if(isConfirm) {
-        $.ajax({
-          url:'/logout',
-          type:'POST',
-          success: function() {
-            location.href = '/admin/login.html'
-          },
-          error: function() {
-            alert('退出失败')
-          }
-        })
-      }
-  })
-  </script>
+  <script src="../assets/js/index.js"></script>
 </body>
 </html>

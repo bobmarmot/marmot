@@ -55,3 +55,13 @@ $('#addForm').on('submit', function (e) {
     }
   })
 })
+
+
+// 取文章的详情
+$.ajax({
+  url: '/posts/' + getUrlParam('id'),
+  type: 'GET',
+  success: function (resp) {
+    console.log(resp)
+  }
+})
